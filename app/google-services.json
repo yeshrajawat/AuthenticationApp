@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "677425045493",
+    "project_id": "authenticationapp-bedb1",
+    "storage_bucket": "authenticationapp-bedb1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677425045493:android:1560048746a0d12f9ecabc",
+        "android_client_info": {
+          "package_name": "com.university.authenticationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677425045493-ul2p5ncgqhr5hr0iqndd1vc1nn952e1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChPHLulu92dri5s3rprGATNv5H5bynfok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "677425045493-ul2p5ncgqhr5hr0iqndd1vc1nn952e1p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
