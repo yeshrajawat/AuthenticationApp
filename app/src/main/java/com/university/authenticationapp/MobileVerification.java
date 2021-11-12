@@ -33,7 +33,7 @@ public class MobileVerification extends AppCompatActivity {
 
         binding = DataBindingUtil.setContentView(this,R.layout.activity_mobile_verification);
 
-        FirebaseAuth auth = FirebaseAuth.getInstance();
+         auth = FirebaseAuth.getInstance();
 
 
         binding.verifyBtn.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +66,8 @@ public class MobileVerification extends AppCompatActivity {
     private void otpVerification() {
 
 
-            PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
+            PhoneAuthOptions options = PhoneAuthOptions.
+                    newBuilder(auth)
                     .setPhoneNumber("+91" + number)
                     .setTimeout(60L, TimeUnit.SECONDS)
                     .setActivity(this)
