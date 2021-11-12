@@ -2,11 +2,13 @@ package com.university.authenticationapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -32,26 +34,22 @@ public class VerifyOtpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verify_otp);
         number = getIntent().getStringExtra("number");
         otpId = getIntent().getStringExtra("otpId");
-        changeFocus();
+
+        binding = DataBindingUtil.setContentView(VerifyOtpActivity.this,R.layout.activity_verify_otp);
 
 
-        binding.tvResendBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(VerifyOtpActivity.this,"OTP sent Successfully",Toast.LENGTH_LONG).show();
-            }
-        });
 
         binding.btnVerify.setOnClickListener(new View.OnClickListener() {
             @Override
 
             public void onClick(View v) {
-                String one = binding.etC1.toString().trim();
-                String two=  binding.etC2.toString().trim();
-                String three=binding.etC3.toString() .trim();
-                String four = binding.etC4.toString().trim();
-                String five = binding.etC5.toString().trim();
-                String six = binding.etC6.toString().trim();
+                String one = binding.etC1.getEditableText().toString().trim();
+                String two=  binding.etC2.getEditableText().toString().trim();
+                String three=binding.etC3.getEditableText().toString() .trim();
+                String four = binding.etC4.getEditableText().toString().trim();
+                String five = binding.etC5.getEditableText().toString().trim();
+                String six = binding.etC6.getEditableText().toString().trim();
+                Log.e("TAG",one+two+three+four+five+six);
                 if(one.isEmpty() || two.isEmpty() || three.isEmpty() ||
                         four.isEmpty() || five.isEmpty() || six.isEmpty() ){
 
@@ -84,91 +82,5 @@ public class VerifyOtpActivity extends AppCompatActivity {
 
     }
 
-    private void changeFocus() {
 
-        binding.etC1.addTextChangedListener(new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            binding.etC2.requestFocus();
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-
-        }
-    });
-        binding.etC2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                binding.etC3.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-        binding.etC3.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                binding.etC4.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-        binding.etC4.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                binding.etC5.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-        binding.etC5.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                binding.etC6.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-
-
-
-    }
 }
